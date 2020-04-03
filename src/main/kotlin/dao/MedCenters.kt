@@ -1,4 +1,4 @@
-import org.jetbrains.exposed.sql.Column
+package main.kotlin.dao
 import org.jetbrains.exposed.sql.Table
 
 /* Author: Dominic Triano
@@ -8,7 +8,8 @@ import org.jetbrains.exposed.sql.Table
  * Description:
  * This is the DSL object that holds the general data for the medical center in which the humans attend
  *
- */object MedCenter : Table() {
+ */
+object MedCenter : Table() {
     var hid = varchar("hid", 50).primaryKey() //Name of the medical center
     var groupId = varchar("groupId", 50).primaryKey() //group code to reference humans
-}
+    }

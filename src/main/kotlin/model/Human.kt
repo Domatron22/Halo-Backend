@@ -10,5 +10,6 @@ package main.kotlin.model
  */
 
 data class Human(val user: String, val pass: String,
+                 val fname: String, val lname: String,
                  val fpath: String, val groupId: String,
                  val access: Int)

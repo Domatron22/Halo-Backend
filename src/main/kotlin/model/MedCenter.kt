@@ -1,4 +1,4 @@
-package main.kotlin.dao
+package main.kotlin.model
 
 /* Author: Dominic Triano
  * Date: 4/3/2020
@@ -8,3 +8,5 @@ package main.kotlin.dao
  *
  *
  */
+
+data class MedCenter(val hid: String, val groupId: String)
