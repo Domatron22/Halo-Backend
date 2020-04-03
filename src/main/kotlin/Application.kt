@@ -14,6 +14,7 @@ import io.ktor.client.features.json.*
 import io.ktor.client.request.*
 import kotlinx.coroutines.*
 import org.jetbrains.exposed.sql.*
+import io.ktor.routing.Routing
 
 /* Author: Dominic Triano
  * Date: 2/15/2020
@@ -55,12 +56,6 @@ fun Application.module(testing: Boolean = false) {
         gson {
         }
     }
-
-    val client = HttpClient(Apache) {
-        install(JsonFeature) {
-            serializer = GsonSerializer()
-        }
-    }
     runBlocking {
         // Sample for making a HTTP Client request
         /*
@@ -73,17 +68,15 @@ fun Application.module(testing: Boolean = false) {
     }
 
     routing {
-        //        get("/") {
-//            call.respondText("HELLO WORLD!", contentType = ContentType.Text.Plain)
-//        }
+        get("/") {
 
+        }
 
         //Registers a medical center using the inputted data
         get("/reg-center")
         {
             val medId : String = call.request.header("medId") ?: "0"
             val grpId : String = call.request.header("grpCode") ?: "0"
-
             try {
                 registerCenter(medId, grpId)
             }catch(e: java.lang.IllegalStateException)
@@ -157,35 +150,6 @@ fun Application.module(testing: Boolean = false) {
 
             try {
                 call.respondText ( fileManager(usrId, grpId))
-            }catch(e: java.lang.IllegalStateException)
-            {
-                call.respond(HttpStatusCode(1150, "Invoked at an Illegal time, not in an appropriate state"), "Does Not Exist")
-            }catch (e: java.util.NoSuchElementException)
-            {
-                call.respond(HttpStatusCode(1151, "Requested an element that does not exist"), "Does Not Exist")
-
-            }catch (e: org.jetbrains.exposed.exceptions.ExposedSQLException)
-            {
-                call.respond(HttpStatusCode(1152, "SQL Query Invalid or table does not exist/corrupted"), "Does Not Exist")
-
-            }
-
-        }
-
-        //Returns all of the comments associated with the forum requested
-        get("/forums")
-        {
-            val forum : String = call.request.header("forum") ?: "0"
-
-            try {
-
-                var comments = forumGet(forum)
-                for(x in comments.second)//for every item in the second mutable list in the pair
-                {
-                    call.respondText( x )
-                }
-
-
             }catch(e: java.lang.IllegalStateException)
             {
                 call.respond(HttpStatusCode(1150, "Invoked at an Illegal time, not in an appropriate state"), "Does Not Exist")

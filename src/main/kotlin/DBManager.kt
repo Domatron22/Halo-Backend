@@ -141,17 +141,17 @@ fun logIn(usr: String, pass: String) : Boolean
     return flag
 }
 
-fun promoteHuman(usr : String, grpId : String, newLvl : Int)
-{
-    Database.connect("jdbc:h2:./test;DB_CLOSE_DELAY=-1", "org.h2.Driver") // Starts database connection
-
-    transaction {
-        Humans
-            .update(Humans.user eq usr)
-            {
-                it[access] = newLvl
-            }
-
-    }
-}
+//fun promoteHuman(usr : String, grpId : String, newLvl : Int)
+//{
+//    Database.connect("jdbc:h2:./test;DB_CLOSE_DELAY=-1", "org.h2.Driver") // Starts database connection
+//
+//    transaction {
+//        Humans
+//            .update(Humans.user = usr)
+//            {
+//                it[access] = newLvl
+//            }
+//
+//    }
+//}
 
