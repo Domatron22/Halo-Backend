@@ -35,7 +35,6 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation("io.ktor:ktor-server-core:$ktor_version")
     implementation("io.ktor:ktor-server-netty:$ktor_version")
-    //Add logging support
     implementation("ch.qos.logback:logback-classic:1.2.3")
     compile "io.ktor:ktor-html-builder:$ktor_version"
     compile "io.ktor:ktor-gson:$ktor_version"
@@ -48,6 +47,10 @@ dependencies {
     compile "org.xerial:sqlite-jdbc:3.21.0.1"
     testCompile "io.ktor:ktor-server-tests:$ktor_version"
     implementation "io.ktor:ktor-network-tls:$ktor_version"
+    //In mem database
+    implementation("com.h2database:h2:1.4.191")
+    // Exposed depends on Joda-time
+    implementation("joda-time:joda-time:2.9.2")
 }
 
 compileKotlin {

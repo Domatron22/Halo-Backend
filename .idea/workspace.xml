@@ -6,40 +6,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5847bf3c-f6b3-45e3-be74-5f2191fa85bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/static/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dao/Humans.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/Human.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$4$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$4$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$4$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$4$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$4$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$4$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$4$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$4$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$4$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$client$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ApplicationKt$module$client$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ApplicationKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/ApplicationKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/JsonSampleClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/JsonSampleClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/application.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/DBManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/DBManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Humans.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Humans.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -63,20 +37,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Application.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="701">
-              <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+            <state relative-caret-position="323">
+              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
               <folding>
-                <element signature="e#1#445#0" expanded="true" />
+                <element signature="e#2#80#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="45" selection-start-line="45" selection-end-line="46" selection-end-column="45" />
+            <state relative-caret-position="680">
+              <caret line="46" column="45" lean-forward="true" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Humans.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/dao/Humans.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/model/Human.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -122,8 +123,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="Kotlin Object" />
+        <option value="FxmlFile" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -134,16 +136,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/gradle.properties" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Humans.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/MedCenter.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Forums.kt" />
         <option value="$PROJECT_DIR$/src/main/resources/application.conf" />
         <option value="$PROJECT_DIR$/src/main/kotlin/CertificateGenerator.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/DBManager.kt" />
         <option value="$PROJECT_DIR$/resources/application.conf" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/resources/SignIn.html" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Application.kt" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/model/Human.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Humans.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/dao/Humans.kt" />
       </list>
     </option>
   </component>
@@ -243,6 +247,9 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="main.kotlin.dao" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\School\Spring 2020\Capstone\Halo-Backend\resources" />
       <recent name="D:\Important\Coding Projects\Kotlin\Halo-Backend\src\main\resources" />
@@ -350,6 +357,14 @@
       <option name="presentableId" value="Default" />
       <updated>1581819318113</updated>
     </task>
+    <task id="LOCAL-00001" summary="Pre Freemarker Backup">
+      <created>1585926997828</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585926997828</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -425,6 +440,10 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout-to-restore>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Pre Freemarker Backup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pre Freemarker Backup" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/out/production/classes/MedCenter.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -485,16 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="758">
           <caret line="323" selection-start-line="323" selection-end-line="323" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Humans.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#78#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -571,18 +580,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Application.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
-          <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+        <state relative-caret-position="323">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
           <folding>
-            <element signature="e#1#445#0" expanded="true" />
+            <element signature="e#2#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="45" selection-start-line="45" selection-end-line="46" selection-end-column="45" />
+        <state relative-caret-position="680">
+          <caret line="46" column="45" lean-forward="true" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/model/Human.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Humans.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/dao/Humans.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
         </state>
       </provider>
     </entry>
