@@ -18,7 +18,7 @@ import java.io.Closeable
 interface DAOFacade: Closeable{
     fun init()
     fun createHuman(userId : String, pwrd : String, fname: String, lname: String, grpCode : String, lvl : Int)
-    fun changePwrd(userId : String, grpCode: String, newPwrd: String)
+    fun changePwrd(userId : String, newPwrd: String)
     fun deleteHuman(userId: String, grpCode: String)
     fun createMedCenter(hidId : String, grpCode : String)
     fun deleteMedCenter(grpCode: String)
@@ -35,8 +35,8 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
         SchemaUtils.create(Humans)
         SchemaUtils.create(MedCenters)
 
-        val humans = listOf(Human("smith1", "1234", "John", "Smith", "GHP", 1 ),
-            Human("doe1", "1234", "Jane" , "Doe", "JAMC", 2))
+        val humans = listOf(Human("smith1", "1234", "John", "Smith", "GHP", "" ,1 ),
+            Human("doe1", "1234", "Jane" , "Doe", "JAMC", "" , 2))
 
 
         Humans.batchInsert(humans){ human ->
@@ -70,7 +70,7 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
         Unit
     }
 
-    override fun changePwrd(userId: String, grpCode: String, newPwrd: String) = transaction(db) {
+    override fun changePwrd(userId: String, newPwrd: String) = transaction(db) {
         Humans.update({Humans.user eq userId}){
             it[Humans.pass] = newPwrd;
         }
@@ -80,6 +80,48 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
     override fun deleteHuman(userId: String, grpCode: String) = transaction(db) {
         Humans.deleteWhere {Humans.user eq userId}
         Unit
+    }
+
+    override fun getHuman(userId: String, grpCode : String): Human? = transaction(db){
+        Humans.select{Humans.user eq userId}.map{
+            Human(
+                it[Humans.user],
+                it[Humans.groupId],
+                it[Humans.pass],
+                it[Humans.f_name],
+                it[Humans.l_name],
+                it[Humans.schedule],
+                it[Humans.access]
+            )
+        }.singleOrNull()
+    }
+
+    override fun getAllHumans() = transaction(db) {
+        Humans.selectAll().map{
+            Human(
+                it[Humans.user],
+                it[Humans.groupId],
+                it[Humans.pass],
+                it[Humans.f_name],
+                it[Humans.l_name],
+                it[Humans.schedule],
+                it[Humans.access]
+            )
+        }
+    }
+
+    override fun getMedHumans(grpCode: String) = transaction(db){
+        Humans.select{Humans.groupId eq grpCode}.map{
+            Human(
+                it[Humans.user],
+                it[Humans.groupId],
+                it[Humans.pass],
+                it[Humans.f_name],
+                it[Humans.l_name],
+                it[Humans.schedule],
+                it[Humans.access]
+            )
+        }
     }
 
     override fun createMedCenter(hidId: String, grpCode: String) = transaction(db) {
@@ -92,14 +134,28 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
     }
 
     override fun deleteMedCenter(grpCode: String) = transaction(db){
-        Medcenters.deleteWhere{MedCenters.groupid eq grpCode}
+        MedCenters.deleteWhere{MedCenters.groupid eq grpCode}
         Unit
     }
 
-    override fun getHuman(userId: String, grpCode: String): Human? = transaction(db){
-        
+    override fun getMedCenter(grpCode: String) = transaction(db){
+        MedCenters.select{MedCenters.groupid eq grpCode}.map{
+            MedCenter(
+                it[MedCenters.hid],
+                it[MedCenters.groupid]
+            )
+        }.singleOrNull()
     }
 
+    override fun getAllMedCenters() = transaction(db){
+        MedCenters.selectAll().map{
+            MedCenter(
+                it[MedCenters.hid],
+                it[MedCenters.groupid]
+            )
+        }
+    }
 
+    override fun close(){ }
 
 }
