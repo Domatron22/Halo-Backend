@@ -42,7 +42,7 @@ fun main() {
         routing {
             route("/"){
                 get{
-                    call.respond(FreeMarkerContent("Home.ftl", mapOf("schedules" to dao.getSchedule())))
+                    call.respond(FreeMarkerContent("Home.ftl", null)))
                 }
             }
 //            route("sign-in"){
