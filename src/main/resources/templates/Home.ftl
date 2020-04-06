@@ -35,13 +35,13 @@
 
 <body>
 <div class="jumbotron">
-	<div class="container">
-		<h1>Project Halo</h1>
-		<p>Welcome to Project Halo! Look around to explore our webpage,  or go straight to sign-in  below</p>
-		<p>
-			<a class="btn btn-primary btn-lg">Learn more</a>
-		</p>
-	</div>
+    <div class="container">
+        <h1>Project Halo</h1>
+        <p>Welcome to Project Halo! Look around to explore our webpage,  or go straight to sign-in  below</p>
+        <p>
+            <a class="btn btn-primary btn-lg">Learn more</a>
+        </p>
+    </div>
     <div class="container"></div>
 </div>
 

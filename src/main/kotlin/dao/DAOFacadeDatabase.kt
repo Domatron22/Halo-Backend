@@ -2,6 +2,7 @@ package main.kotlin.dao
 
 import main.kotlin.model.Human
 import main.kotlin.model.MedCenter
+import main.kotlin.model.Schedule
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.io.Closeable
@@ -27,6 +28,7 @@ interface DAOFacade: Closeable{
     fun getMedCenter(grpCode : String): MedCenter?
     fun getMedHumans(grpCode: String): List<Human>
     fun getAllMedCenters(): List<MedCenter>
+    fun getSchedule(): List<Schedule>
 }
 
 class DAOFacadeDatabase(val db: Database): DAOFacade{
@@ -34,9 +36,10 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
     override fun init() = transaction(db){
         SchemaUtils.create(Humans)
         SchemaUtils.create(MedCenters)
+        SchemaUtils.create(Schedules)
 
-        val humans = listOf(Human("smith1", "1234", "John", "Smith", "GHP", "" ,1 ),
-            Human("doe1", "1234", "Jane" , "Doe", "JAMC", "" , 2))
+        val humans = listOf(Human("smith1", "1234", "John", "Smith", "GHP", "Empty" ,1 ),
+            Human("doe1", "1234", "Jane" , "Doe", "JAMC", "Empty" , 2))
 
 
         Humans.batchInsert(humans){ human ->
@@ -45,6 +48,7 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
             this[Humans.f_name] = human.fname
             this[Humans.l_name] = human.lname
             this[Humans.groupId] = human.groupId
+            this[Humans.schedule] = human.schedule
             this[Humans. access] = human.access
         }
 
@@ -152,6 +156,18 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
             MedCenter(
                 it[MedCenters.hid],
                 it[MedCenters.groupid]
+            )
+        }
+    }
+
+    override fun getSchedule() = transaction(db){
+        Schedules.selectAll().map {
+            Schedule(
+                it[Schedules.month],
+                it[Schedules.day],
+                it[Schedules.year],
+                it[Schedules.open],
+                it[Schedules.close]
             )
         }
     }
