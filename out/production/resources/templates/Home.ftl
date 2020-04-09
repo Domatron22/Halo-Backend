@@ -39,7 +39,7 @@
         <h1>Project Halo</h1>
         <p>Welcome to Project Halo! Look around to learn more about us,  or go straight to sign-in  below</p>
         <p>
-            <a class="btn btn-primary btn-lg">Sign In</a>
+            <a href = "/signIn" class="btn btn-primary btn-lg">Sign In</a>
         </p>
     </div>
     <div class="container"></div>
@@ -61,11 +61,12 @@
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#faq">FAQs</a></li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+<!--            <form class="form-inline my-2 my-lg-0">-->
+<!--                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--            </form>-->
         </div><!--/.nav-collapse -->
     </div>
 </div>

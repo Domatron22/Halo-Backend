@@ -50,6 +50,12 @@ fun main() {
                     call.respond(FreeMarkerContent("Home.ftl", null))
                 }
             }
+
+            route("/signIn"){
+                get{
+                    call.respond(FreeMarkerContent("SignIn.ftl", null))
+                }
+            }
         }
     }.start(wait=true)
 }
