@@ -37,7 +37,7 @@
 <div class="jumbotron">
     <div class="container">
         <h1>Project Halo</h1>
-        <p>Welcome to Project Halo! Look around to explore our webpage,  or go straight to sign-in  below</p>
+        <p>Welcome to Project Halo! Look around to learn more about us,  or go straight to sign-in  below</p>
         <p>
             <a class="btn btn-primary btn-lg">Sign In</a>
         </p>

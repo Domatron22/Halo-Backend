@@ -12,7 +12,7 @@ import java.io.Closeable
  * Language: Kotlin
  * Project: Halo
  * Description:
- *
+ * This file includes all of the database operations needed for this to funtion
  *
  */
 

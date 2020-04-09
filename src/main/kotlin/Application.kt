@@ -29,7 +29,7 @@ import java.io.File
  * Language: Kotlin
  * Project: Halo
  * Description:
- * Processing of the coming to and from the database, these are the main functions
+ * Processing of the data coming to and from the database, these are the main functions
  *
  */
 

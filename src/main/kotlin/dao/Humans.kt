@@ -6,7 +6,7 @@ import org.jetbrains.exposed.sql.Table
  * Language: Kotlin
  * Project: Halo
  * Description:
- *  DSL Object for A Human (Homo-sapiens), an individual who can be observed medically. This object will keep all of
+ *  DAO Object for A Human (Homo-sapiens), an individual who can be observed medically. This object will keep all of
  * their data in an easily accessible format
  *
  */

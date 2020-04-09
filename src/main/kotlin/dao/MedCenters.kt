@@ -6,7 +6,7 @@ import org.jetbrains.exposed.sql.Table
  * Language: Kotlin
  * Project: Halo
  * Description:
- *
+ * DAO object for the medical Centers, this wil help keep track of what hospitals are involved
  *
  */
 object MedCenters : Table() {

@@ -6,9 +6,11 @@ import org.jetbrains.exposed.sql.Table
  * Language: Kotlin
  * Project: Halo
  * Description:
- *
+ * DAO object for schedules, this will allow a schedule to be saved on the website for later viewing
  *
  */
+
+//TODO -- Might make this into a schedule for humans to see what their schedule is, or integrate google clendar.
 object Schedules : Table() {
     var month = varchar("month", 10)
     var day = integer("day")
