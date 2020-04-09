@@ -1,5 +1,7 @@
 package main.kotlin
 
+import freemarker.template.Configuration
+import freemarker.cache.* // template loaders live in this package
 import freemarker.cache.ClassTemplateLoader
 import io.ktor.application.install
 import io.ktor.application.call
@@ -20,6 +22,7 @@ import main.kotlin.dao.DAOFacadeDatabase
 import main.kotlin.model.Human
 import main.kotlin.model.MedCenter
 import org.jetbrains.exposed.sql.Database
+import java.io.File
 
 /* Author: Dominic Triano
  * Date: 2/15/2020
@@ -33,10 +36,12 @@ import org.jetbrains.exposed.sql.Database
 val dao = DAOFacadeDatabase(Database.connect("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1", driver = "org.h2.Driver"))
 fun main() {
     embeddedServer(Netty, port = 8080) {
+        //Configuration cfg = new Configuration(Configuration.VERSION_2_3_29)
         dao.init()
         install(FreeMarker){
             //allow the connection with the ftl files
             templateLoader = ClassTemplateLoader(this::class.java.classLoader, "templates")
+            print("Test")
         }
 
         routing {
@@ -45,14 +50,6 @@ fun main() {
                     call.respond(FreeMarkerContent("Home.ftl", null))
                 }
             }
-//            route("sign-in"){
-//                get{
-//                    val action = (call.request.queryParameters["action"])
-//                    when(action){
-//                        call.respond()
-//                    }
-//                }
-//            }
         }
     }.start(wait=true)
 }

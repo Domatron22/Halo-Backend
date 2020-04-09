@@ -1,4 +1,3 @@
-<#macro mainLayout title="Welcome to Employee Database">
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +39,7 @@
         <h1>Project Halo</h1>
         <p>Welcome to Project Halo! Look around to explore our webpage,  or go straight to sign-in  below</p>
         <p>
-            <a class="btn btn-primary btn-lg">Learn more</a>
+            <a class="btn btn-primary btn-lg">Sign In</a>
         </p>
     </div>
     <div class="container"></div>
@@ -96,4 +95,3 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
-</#macro>
