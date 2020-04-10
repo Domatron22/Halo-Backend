@@ -78,17 +78,16 @@
             <h2>Fast</h2>
             <p>Instead of having to put in requests for your data and have to wait days,
                 just get a sign in from your doctor and have access to all your data instantly! </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Easy</h2>
             <p>With Halo's interface, it is easy to understand and to find all of the data you need! If you need any help, just contact our support! </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="#" role="button">FAQs &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Accessible</h2>
             <p>Being a website, this is easily accessible from any platform at any time. There is no Additional software needed. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="#" role="button">FAQs &raquo;</a></p>
         </div>
     </div>
 </div>

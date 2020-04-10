@@ -23,12 +23,14 @@ interface DAOFacade: Closeable{
     fun deleteHuman(userId: String, grpCode: String)
     fun createMedCenter(hidId : String, grpCode : String)
     fun deleteMedCenter(grpCode: String)
-    fun getHuman(userId : String, grpCode : String): Human?
+    fun getHuman(userId : String, pass : String): Human?
+    fun authentication(userId : String, pass : String): Boolean
     fun getAllHumans(): List<Human>
     fun getMedCenter(grpCode : String): MedCenter?
     fun getMedHumans(grpCode: String): List<Human>
     fun getAllMedCenters(): List<MedCenter>
     fun getSchedule(): List<Schedule>
+    fun getAccess(user : String) : Int
 }
 
 class DAOFacadeDatabase(val db: Database): DAOFacade{
@@ -86,8 +88,9 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
         Unit
     }
 
-    override fun getHuman(userId: String, grpCode : String): Human? = transaction(db){
+    override fun getHuman(userId: String, pass : String): Human? = transaction(db){
         Humans.select{Humans.user eq userId}.map{
+            Humans.select { Humans.pass eq pass }.map{
             Human(
                 it[Humans.user],
                 it[Humans.groupId],
@@ -97,7 +100,32 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
                 it[Humans.schedule],
                 it[Humans.access]
             )
+            }.singleOrNull()
         }.singleOrNull()
+    }
+
+    override fun authentication(userId: String, pass: String) : Boolean{
+
+        val human : ArrayList<Human> = arrayListOf()
+        transaction(db) {
+            Humans.select { Humans.user eq userId }.map {
+                Humans.select { Humans.pass eq pass }.map {
+                    human.add(
+                    Human(
+                        user = it[Humans.user],
+                        groupId = it[Humans.groupId],
+                        pass = it[Humans.pass],
+                        fname = it[Humans.f_name],
+                        lname = it[Humans.l_name],
+                        schedule = it[Humans.schedule],
+                        access = it[Humans.access]
+                        )
+                    )
+                }
+            }
+        }
+
+        return human.isNotEmpty()
     }
 
     override fun getAllHumans() = transaction(db) {
@@ -170,6 +198,29 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
                 it[Schedules.close]
             )
         }
+    }
+
+    override fun getAccess(user: String) : Int {
+
+        val human : ArrayList<Human> = arrayListOf()
+        transaction(db) {
+            Humans.select { Humans.user eq user }.map {
+                human.add(
+                    Human(
+                        user = it[Humans.user],
+                        groupId = it[Humans.groupId],
+                        pass = it[Humans.pass],
+                        fname = it[Humans.f_name],
+                        lname = it[Humans.l_name],
+                        schedule = it[Humans.schedule],
+                        access = it[Humans.access]
+                    )
+                )
+            }
+        }
+
+        return human[0].access
+
     }
 
     override fun close(){ }
