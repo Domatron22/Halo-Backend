@@ -60,20 +60,20 @@ fun main() {
                 }
                 post{
                     val postParameters = call.receiveParameters()
-                    val action = (call.request.queryParameters["action"] ?: "empty")
+                    val action = postParameters["action"]
 
-                    print("testingg1")
-                    print(postParameters["action"])
-                    print(postParameters["inputUser"])
-                    print(postParameters["inputPassword"])
+//                    print("testingg1")
+//                    print(postParameters["action"])
+//                    print(postParameters["inputUser"])
+//                    print(postParameters["inputPassword"])
                     when(action){
-                        "signin" -> {
-                            print("testingg2")
+                        "signIn" -> {
+                            //print("testingg2")
                             val id = postParameters["inputUser"] ?: "empty"
                             val pass = postParameters["inputPassword"] ?: "empty"
                             if(dao.authentication(id, pass))
                             {
-                                print("testingg3")
+                                //print("testingg3")
                                 when(dao.getAccess(id)){
                                     1 -> call.respond(FreeMarkerContent("Client.ftl", dao.getHuman(id, pass)))
                                     2 -> call.respond(FreeMarkerContent("Staff.ftl", dao.getHuman(id, pass)))
@@ -84,18 +84,10 @@ fun main() {
                                 call.respond(FreeMarkerContent("SignIn.ftl", null))
                             }
                         }
+                        else -> call.respond(FreeMarkerContent("SignIn.ftl", null))
                     }
                 }
 
-            }
-
-            route("/authorization"){
-                get{
-
-                }
-                post{
-
-                }
             }
         }
     }.start(wait=true)
