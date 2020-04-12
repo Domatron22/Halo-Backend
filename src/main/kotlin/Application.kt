@@ -59,45 +59,42 @@ fun main() {
 
                 }
                 post{
-                    val postParameters: Parameters = call.receiveParameters()
-                    val action = call.request.queryParameters["submit"]
-                    print(postParameters["inputUser"] +" "+ postParameters["inputPassword"])
+                    val postParameters = call.receiveParameters()
+                    val action = (call.request.queryParameters["action"] ?: "empty")
+
+                    print("testingg1")
+                    print(postParameters["action"])
+                    print(postParameters["inputUser"])
+                    print(postParameters["inputPassword"])
                     when(action){
-                        "signin" -> if(dao.authentication(postParameters["inputUser"]!!, postParameters["inputPassword"]!!))
-                        {
-                            print("testing************************************************************************************")
-                            when(dao.getAccess(postParameters["inputUser"]!!)){
-                                1 -> call.respond(FreeMarkerContent("Client.ftl", dao.getHuman(postParameters["inputUser"]!!,postParameters["inputPassword"]!!)))
-                                2 -> call.respond(FreeMarkerContent("Staff.ftl", dao.getHuman(postParameters["inputUser"]!!,postParameters["inputPassword"]!!)))
-                                3 -> call.respond(FreeMarkerContent("Dev.ftl", dao.getHuman(postParameters["inputUser"]!!,postParameters["inputPassword"]!!)))
-                                else -> call.respond(FreeMarkerContent("SignIn.ftl", null))
+                        "signin" -> {
+                            print("testingg2")
+                            val id = postParameters["inputUser"] ?: "empty"
+                            val pass = postParameters["inputPassword"] ?: "empty"
+                            if(dao.authentication(id, pass))
+                            {
+                                print("testingg3")
+                                when(dao.getAccess(id)){
+                                    1 -> call.respond(FreeMarkerContent("Client.ftl", dao.getHuman(id, pass)))
+                                    2 -> call.respond(FreeMarkerContent("Staff.ftl", dao.getHuman(id, pass)))
+                                    3 -> call.respond(FreeMarkerContent("Dev.ftl", dao.getHuman(id, pass)))
+                                    else -> call.respond(FreeMarkerContent("SignIn.ftl", null))
+                                }
+                            }else{
+                                call.respond(FreeMarkerContent("SignIn.ftl", null))
                             }
-                        }else{
-                            call.respond(FreeMarkerContent("SignIn.ftl", null))
                         }
                     }
-                    }
+                }
+
             }
 
             route("/authorization"){
+                get{
+
+                }
                 post{
-                    val postParameters: Parameters = call.receiveParameters()
-                    val action = call.request.queryParameters["action"]
-                    print(postParameters["inputUser"] +" "+ postParameters["inputPassword"])
-                    when(action){
-                        "signin" -> if(dao.authentication(postParameters["inputUser"]!!, postParameters["inputPassword"]!!))
-                        {
-                            print("testing************************************************************************************")
-                            when(dao.getAccess(postParameters["inputUser"]!!)){
-                                1 -> call.respond(FreeMarkerContent("Client.ftl", dao.getHuman(postParameters["inputUser"]!!,postParameters["inputPassword"]!!)))
-                                2 -> call.respond(FreeMarkerContent("Staff.ftl", dao.getHuman(postParameters["inputUser"]!!,postParameters["inputPassword"]!!)))
-                                3 -> call.respond(FreeMarkerContent("Dev.ftl", dao.getHuman(postParameters["inputUser"]!!,postParameters["inputPassword"]!!)))
-                                else -> call.respond(FreeMarkerContent("SignIn.ftl", null))
-                            }
-                        }else{
-                            call.respond(FreeMarkerContent("SignIn.ftl", null))
-                        }
-                    }
+
                 }
             }
         }
