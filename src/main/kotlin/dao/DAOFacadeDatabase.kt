@@ -51,7 +51,7 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
             this[Humans.l_name] = human.lname
             this[Humans.groupId] = human.groupId
             this[Humans.schedule] = human.schedule
-            this[Humans. access] = human.access
+            this[Humans.access] = human.access
         }
 
         val medCenters = listOf(MedCenter("Good Hospital", "GHP"),

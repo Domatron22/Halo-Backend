@@ -49,16 +49,19 @@ fun main() {
         routing {
             route("/"){
                 get{
+                    //responds with said .ftl file
                     call.respond(FreeMarkerContent("Home.ftl", null))
                 }
             }
 
             route("/signIn"){
                 get{
+                    //responds with said .ftl file
                     call.respond(FreeMarkerContent("SignIn.ftl", null))
 
                 }
                 post{
+                    //recieves the parameters sent from the .ftl file associated with the path
                     val postParameters = call.receiveParameters()
                     val action = postParameters["action"]
 
@@ -74,6 +77,8 @@ fun main() {
                             if(dao.authentication(id, pass))
                             {
                                 //print("testingg3")
+                                //whatever access level they have says what they are
+                                //1 - Client, 2 - Doctor, 3 - Developer, Failed to get it? Try again
                                 when(dao.getAccess(id)){
                                     1 -> call.respond(FreeMarkerContent("Client.ftl", dao.getHuman(id, pass)))
                                     2 -> call.respond(FreeMarkerContent("Staff.ftl", dao.getHuman(id, pass)))
@@ -84,9 +89,20 @@ fun main() {
                                 call.respond(FreeMarkerContent("SignIn.ftl", null))
                             }
                         }
+                        //There should be no other possible action, but just in case, send them back
                         else -> call.respond(FreeMarkerContent("SignIn.ftl", null))
                     }
                 }
+
+            }
+
+            route("/client"){
+
+            }
+            route("/staff"){
+
+            }
+            route("/dev"){
 
             }
         }
