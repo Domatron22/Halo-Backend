@@ -17,7 +17,9 @@ import io.ktor.request.receiveParameters
 import io.ktor.http.content.resources
 import io.ktor.http.content.static
 import io.ktor.http.Parameters
+import io.ktor.http.content.LocalFileContent
 import io.ktor.response.respond
+import io.ktor.response.respondFile
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import main.kotlin.dao.DAOFacadeDatabase
@@ -25,6 +27,8 @@ import main.kotlin.model.Human
 import main.kotlin.model.MedCenter
 import org.jetbrains.exposed.sql.Database
 import java.io.File
+import io.ktor.routing.header
+
 
 /* Author: Dominic Triano
  * Date: 2/15/2020
@@ -51,6 +55,7 @@ fun main() {
                 get{
                     //responds with said .ftl file
                     call.respond(FreeMarkerContent("Home.ftl", null))
+                    //call.respondFile(File("resources", "year1.pdf"))
                 }
             }
 
@@ -64,7 +69,7 @@ fun main() {
                     //recieves the parameters sent from the .ftl file associated with the path
                     val postParameters = call.receiveParameters()
                     val action = postParameters["action"]
-
+//                    testing where data is going missing
 //                    print("testingg1")
 //                    print(postParameters["action"])
 //                    print(postParameters["inputUser"])
@@ -103,6 +108,14 @@ fun main() {
 
             }
             route("/dev"){
+
+            }
+
+            route("/upload"){
+
+            }
+
+            route("/download"){
 
             }
         }
