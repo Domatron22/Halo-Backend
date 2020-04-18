@@ -12,9 +12,6 @@
     <body>
     <div class="container">
         <div class="row m-1">
-            <h3>Files</h3>
-        </div>
-        <div class="row m-1">
             <#nested/>
         </div>
     </div>

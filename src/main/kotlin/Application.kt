@@ -55,7 +55,7 @@ fun main() {
                 get{
                     //responds with said .ftl file
                     call.respond(FreeMarkerContent("Home.ftl", null))
-                    //call.respondFile(File("resources", "year1.pdf"))
+                    //call.respondFile(File("resources", "name of file"))
                 }
             }
 
@@ -85,9 +85,9 @@ fun main() {
                                 //whatever access level they have says what they are
                                 //1 - Client, 2 - Doctor, 3 - Developer, Failed to get it? Try again
                                 when(dao.getAccess(id)){
-                                    1 -> call.respond(FreeMarkerContent("Client.ftl", dao.getHuman(id, pass)))
-                                    2 -> call.respond(FreeMarkerContent("Staff.ftl", dao.getHuman(id, pass)))
-                                    3 -> call.respond(FreeMarkerContent("Dev.ftl", dao.getHuman(id, pass)))
+                                    1 -> call.respond(FreeMarkerContent("index.ftl", mapOf("files" to dao.getUserFiles(id))))
+                                    2 -> call.respond(FreeMarkerContent("staff.ftl", dao.getClients(id)))
+                                    3 -> call.respond(FreeMarkerContent("dev.ftl", dao.getAllHumans()))
                                     else -> call.respond(FreeMarkerContent("SignIn.ftl", null))
                                 }
                             }else{
@@ -102,21 +102,61 @@ fun main() {
             }
 
             route("/client"){
+                get{
+                    val user = call.request.queryParameters["user"] ?: "empty"
+                    call.respond(FreeMarkerContent("index.ftl", mapOf("files" to dao.getUserFiles(user))))
+                }
+                post{
 
+                }
             }
             route("/staff"){
+                get{
+                    val user = call.request.queryParameters["user"] ?: "empty"
+                    call.respond(FreeMarkerContent("staff.ftl" , mapOf("humans" to dao.getClients(user))))
+                }
+                post{
 
+                }
             }
             route("/dev"){
-
+                get{
+                    val user = call.request.queryParameters["user"] ?: "empty"
+                    call.respond(FreeMarkerContent("dev.ftl" , mapOf("humans" to dao.getAllHumans())))
+                }
             }
 
-            route("/upload"){
+            route("/uploads"){
+                get{
+                    call.respond(FreeMarkerContent("upload.ftl" , null))
+                }
+                post{
+                    val postParameters = call.receiveParameters()
+                    val multipart = call.receiveMultipart()
+                    multipart.forEachPart { part ->
+                        // if part is a file (could be form item)
+                        if(part is PartData.FileItem) {
+                            // retrieve file name of upload
+                            val name = part.originalFileName!!
+                            val file = File("/uploads/$name")
 
+                            // use InputStream from part to save file
+                            part.streamProvider().use { its ->
+                                // copy the stream to the file with buffering
+                                file.outputStream().buffered().use {
+                                    // note that this is blocking
+                                    its.copyTo(it)
+                                }
+                            }
+                        }
+                        // make sure to dispose of the part after use to prevent leaks
+                        part.dispose()
+                    }
+                }
             }
 
             route("/download"){
-
+                //call.respondFile(File("resources", "name of file"))
             }
         }
     }.start(wait=true)

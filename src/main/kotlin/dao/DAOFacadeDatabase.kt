@@ -3,6 +3,7 @@ package main.kotlin.dao
 import main.kotlin.model.Human
 import main.kotlin.model.MedCenter
 import main.kotlin.model.Schedule
+import main.kotlin.model.File
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.io.Closeable
@@ -31,6 +32,8 @@ interface DAOFacade: Closeable{
     fun getAllMedCenters(): List<MedCenter>
     fun getSchedule(): List<Schedule>
     fun getAccess(user : String) : Int
+    fun getUserFiles(user : String) : List<File>
+    fun getClients(hid : String) : List<Human>
 }
 
 class DAOFacadeDatabase(val db: Database): DAOFacade{
@@ -38,6 +41,7 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
     override fun init() = transaction(db){
         SchemaUtils.create(Humans)
         SchemaUtils.create(MedCenters)
+        SchemaUtils.create(Files)
         SchemaUtils.create(Schedules)
 
         val humans = listOf(Human("smith1", "1234", "John", "Smith", "GHP", "Empty" ,1 ),
@@ -61,6 +65,17 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
             this[MedCenters.hid] = medCenter.hid
             this[MedCenters.groupid] = medCenter.groupId
         }
+
+        val files = listOf(File("smith1" , "John Smith" , "HeartScan.jpg" , "GHP"),
+            File("smith1" , "John Smith" , "ShoulderSurgeryDescription.pdf" , "GHP"))
+
+        Files.batchInsert(files){ file ->
+            this[Files.user] = file.user
+            this[Files.fullName] = file.fullName
+            this[Files.file] = file.fileName
+            this[Files.hid] = file.hid
+        }
+
         Unit
     }
 
@@ -222,6 +237,48 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
         return human[0].access
 
     }
+
+    override fun getUserFiles(user: String): List<File>{
+        val fileList : ArrayList<File> = arrayListOf()
+        transaction(db){
+            Files.select { Files.user eq user }.map{
+                fileList.add(
+                    File(
+                        user = it[Files.user],
+                        fullName = it[Files.fullName],
+                        fileName = it[Files.file],
+                        hid = it[Files.hid]
+                    )
+                )
+            }
+
+        }
+
+        return fileList
+    }
+
+    override fun getClients(user: String): List<Human>{
+        val humanList : ArrayList<Human> = arrayListOf()
+        transaction(db){
+            Humans.select { Humans.user eq user }.map{
+                humanList.add(
+                    Human(
+                        user = it[Humans.user],
+                        groupId = it[Humans.groupId],
+                        pass = it[Humans.pass],
+                        fname = it[Humans.f_name],
+                        lname = it[Humans.l_name],
+                        schedule = it[Humans.schedule],
+                        access = it[Humans.access]
+                    )
+                )
+            }
+        }
+
+        return humanList
+    }
+
+
 
     override fun close(){ }
 
