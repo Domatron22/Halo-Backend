@@ -5,7 +5,7 @@ package main.kotlin.model
  * Language: Kotlin
  * Project: Halo
  * Description:
- *
+ * Data class for creating Files to enter into the database
  *
  */
 data class File(val user: String, val fullName : String, val fileName: String,

@@ -22,6 +22,7 @@ import io.ktor.response.respond
 import io.ktor.response.respondFile
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
+import io.ktor.request.receiveMultipart
 import main.kotlin.dao.DAOFacadeDatabase
 import main.kotlin.model.Human
 import main.kotlin.model.MedCenter
@@ -126,34 +127,34 @@ fun main() {
                 }
             }
 
-            route("/uploads"){
-                get{
-                    call.respond(FreeMarkerContent("upload.ftl" , null))
-                }
-                post{
-                    val postParameters = call.receiveParameters()
-                    val multipart = call.receiveMultipart()
-                    multipart.forEachPart { part ->
-                        // if part is a file (could be form item)
-                        if(part is PartData.FileItem) {
-                            // retrieve file name of upload
-                            val name = part.originalFileName!!
-                            val file = File("/uploads/$name")
-
-                            // use InputStream from part to save file
-                            part.streamProvider().use { its ->
-                                // copy the stream to the file with buffering
-                                file.outputStream().buffered().use {
-                                    // note that this is blocking
-                                    its.copyTo(it)
-                                }
-                            }
-                        }
-                        // make sure to dispose of the part after use to prevent leaks
-                        part.dispose()
-                    }
-                }
-            }
+//            route("/uploads"){
+//                get{
+//                    call.respond(FreeMarkerContent("upload.ftl" , null))
+//                }
+//                post{
+//                    val postParameters = call.receiveParameters()
+//                    val multipart = call.receiveMultipart()
+//                    multipart.forEachPart { part ->
+//                        // if part is a file (could be form item)
+//                        if(part is PartData.FileItem) {
+//                            // retrieve file name of upload
+//                            val name = part.originalFileName!!
+//                            val file = File("/uploads/$name")
+//
+//                            // use InputStream from part to save file
+//                            part.streamProvider().use { its ->
+//                                // copy the stream to the file with buffering
+//                                file.outputStream().buffered().use {
+//                                    // note that this is blocking
+//                                    its.copyTo(it)
+//                                }
+//                            }
+//                        }
+//                        // make sure to dispose of the part after use to prevent leaks
+//                        part.dispose()
+//                    }
+//                }
+//            }
 
             route("/download"){
                 //call.respondFile(File("resources", "name of file"))

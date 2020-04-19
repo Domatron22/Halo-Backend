@@ -2,55 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5847bf3c-f6b3-45e3-be74-5f2191fa85bc" name="Default Changelist" comment="Pre Freemarker Backup">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dao/Files.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/File.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$2$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$authentication$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$authentication$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$changePwrd$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$changePwrd$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$changePwrd$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$changePwrd$1$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$changePwrd$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$changePwrd$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$createHuman$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$createHuman$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$createHuman$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$createHuman$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$createMedCenter$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$createMedCenter$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$createMedCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$createMedCenter$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$deleteHuman$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$deleteHuman$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$deleteHuman$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$deleteHuman$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$deleteMedCenter$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$deleteMedCenter$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$deleteMedCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$deleteMedCenter$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getAccess$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getAccess$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getAllHumans$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getAllHumans$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getAllMedCenters$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getAllMedCenters$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getHuman$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getHuman$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getMedCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getMedCenter$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getMedHumans$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getMedHumans$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getSchedule$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getSchedule$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$init$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$init$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$init$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$init$1$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$init$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$init$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/HaloLogo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/index.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/template.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/template.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/year1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/HaloLogo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/HaloLogo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/templates/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/index.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/templates/template.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/template.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/year1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/META-INF/Halo.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$2$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$3$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$3$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$4$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$4$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt$main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/ApplicationKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$authentication$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$changePwrd$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$changePwrd$1$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$changePwrd$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$createHuman$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$createHuman$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$createMedCenter$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$createMedCenter$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$deleteHuman$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$deleteHuman$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$deleteMedCenter$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$deleteMedCenter$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getAccess$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getAllHumans$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getAllMedCenters$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getClients$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getHuman$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getMedCenter$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getMedHumans$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getSchedule$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$getUserFiles$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$init$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$init$1$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$init$1$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase$init$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/main/kotlin/dao/DAOFacadeDatabase.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Application.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dao/DAOFacadeDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dao/DAOFacadeDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dao/Files.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dao/Files.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/File.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/File.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/Human.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/Human.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/MedCenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/MedCenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/Schedule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/Schedule.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -74,17 +78,35 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Application.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1053">
-              <caret line="160" column="9" lean-forward="true" selection-start-line="160" selection-start-column="9" selection-end-line="160" selection-end-column="9" />
+            <state relative-caret-position="645">
+              <caret line="146" column="66" lean-forward="true" selection-start-line="146" selection-start-column="66" selection-end-line="146" selection-end-column="66" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/templates/SignIn.ftl">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/dao/Humans.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1479">
-              <caret line="96" selection-start-line="96" selection-end-line="96" />
+            <state relative-caret-position="221">
+              <caret line="13" column="47" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/dao/DAOFacadeDatabase.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-460">
+              <caret line="35" column="80" selection-start-line="35" selection-start-column="80" selection-end-line="35" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/dao/Files.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -94,15 +116,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/dao/DAOFacadeDatabase.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -119,8 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/model/File.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+            <state relative-caret-position="119">
+              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -128,8 +141,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/model/Human.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="14" selection-end-column="33" />
+            <state relative-caret-position="119">
+              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -137,8 +150,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/model/MedCenter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="10" />
+            <state relative-caret-position="119">
+              <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -146,17 +159,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/model/Schedule.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/templates/index.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+            <state relative-caret-position="119">
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -196,15 +200,12 @@
         <option value="$PROJECT_DIR$/resources/application.conf" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Humans.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/MedCenter.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/model/MedCenter.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/dao/DAOperation.kt" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/template.ftl" />
         <option value="$PROJECT_DIR$/src/main/kotlin/model/Schedule.java" />
         <option value="$PROJECT_DIR$/src/main/kotlin/dao/Schedules.java" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/model/Schedule.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/DBManager.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/model/Human.kt" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/Home.ftl" />
         <option value="$PROJECT_DIR$/src/main/kotlin/dao/MedCenters.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/dao/Schedules.kt" />
@@ -220,11 +221,14 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/dao/Humans.kt" />
         <option value="$PROJECT_DIR$/resources/templates/humans.ftl" />
         <option value="$PROJECT_DIR$/resources/templates/newFile.ftl" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/model/File.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/dao/Files.kt" />
         <option value="$PROJECT_DIR$/resources/templates/template.ftl" />
         <option value="$PROJECT_DIR$/resources/templates/index.ftl" />
         <option value="$PROJECT_DIR$/src/main/kotlin/dao/DAOFacadeDatabase.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/dao/Files.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/model/File.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/model/Human.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/model/MedCenter.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/model/Schedule.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Application.kt" />
       </list>
     </option>
@@ -564,34 +568,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Pre Freemarker Backup" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-server-netty/1.1.4/a17d6c22b051be946d06f4a18b90733cf7d54a5d/ktor-server-netty-1.1.4-sources.jar!/jvmMain/io/ktor/server/netty/EngineMain.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-server-host-common/1.1.4/a0eca825de608e7e7f9eec0be0905c6b32dcd1d5/ktor-server-host-common-1.1.4-sources.jar!/jvmMain/io/ktor/server/engine/ApplicationEngine.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-server-netty/1.1.4/a17d6c22b051be946d06f4a18b90733cf7d54a5d/ktor-server-netty-1.1.4-sources.jar!/jvmMain/io/ktor/server/netty/NettyApplicationEngine.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-server-host-common/1.1.4/a0eca825de608e7e7f9eec0be0905c6b32dcd1d5/ktor-server-host-common-1.1.4-sources.jar!/jvmMain/io/ktor/server/engine/ApplicationEngineEnvironmentReloading.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="758">
-          <caret line="323" selection-start-line="323" selection-end-line="323" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/Halo-Home.html" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.30/1093224407fb1a6f5b79358044a2836bb3d899fd/kotlin-stdlib-1.3.30-sources.jar!/kotlin/jvm/annotations/JvmPlatformAnnotations.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -724,10 +700,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/dao/Files.kt">
+    <entry file="file://$PROJECT_DIR$/resources/templates/SignIn.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        <state relative-caret-position="1479">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/staff.ftl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/dev.ftl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/upload.ftl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-server-core/1.1.4/772827aa0609822e46b7d376526bc73a56d3dfab/ktor-server-core-1.1.4-sources.jar!/jvmMain/io/ktor/request/ApplicationReceiveFunctions.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="121" column="35" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/dao/DAOFacadeDatabase.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-460">
+          <caret line="35" column="80" selection-start-line="35" selection-start-column="80" selection-end-line="35" selection-end-column="80" />
         </state>
       </provider>
     </entry>
@@ -735,6 +741,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="47" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/dao/Files.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -754,57 +767,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/model/File.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        <state relative-caret-position="119">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/model/Human.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="14" selection-end-column="33" />
+        <state relative-caret-position="119">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/model/MedCenter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="10" />
+        <state relative-caret-position="119">
+          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/model/Schedule.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/templates/SignIn.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/templates/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/dao/DAOFacadeDatabase.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+        <state relative-caret-position="119">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Application.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1053">
-          <caret line="160" column="9" lean-forward="true" selection-start-line="160" selection-start-column="9" selection-end-line="160" selection-end-column="9" />
+        <state relative-caret-position="645">
+          <caret line="146" column="66" lean-forward="true" selection-start-line="146" selection-start-column="66" selection-end-line="146" selection-end-column="66" />
         </state>
       </provider>
     </entry>

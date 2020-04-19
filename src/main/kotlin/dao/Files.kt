@@ -6,7 +6,7 @@ import org.jetbrains.exposed.sql.Table
  * Language: Kotlin
  * Project: Halo
  * Description:
- *
+ * The table for files, this is linked to the Human table by user
  *
  */
 object Files : Table() {

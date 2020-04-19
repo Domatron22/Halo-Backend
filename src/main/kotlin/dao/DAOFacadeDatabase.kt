@@ -18,22 +18,22 @@ import java.io.Closeable
  */
 
 interface DAOFacade: Closeable{
-    fun init()
-    fun createHuman(userId : String, pwrd : String, fname: String, lname: String, grpCode : String, lvl : Int)
-    fun changePwrd(userId : String, newPwrd: String)
-    fun deleteHuman(userId: String, grpCode: String)
-    fun createMedCenter(hidId : String, grpCode : String)
-    fun deleteMedCenter(grpCode: String)
-    fun getHuman(userId : String, pass : String): Human?
-    fun authentication(userId : String, pass : String): Boolean
-    fun getAllHumans(): List<Human>
-    fun getMedCenter(grpCode : String): MedCenter?
-    fun getMedHumans(grpCode: String): List<Human>
-    fun getAllMedCenters(): List<MedCenter>
-    fun getSchedule(): List<Schedule>
-    fun getAccess(user : String) : Int
-    fun getUserFiles(user : String) : List<File>
-    fun getClients(hid : String) : List<Human>
+    fun init() //Initiation for the databases
+    fun createHuman(userId : String, pwrd : String, fname: String, lname: String, grpCode : String, lvl : Int) //creates a human object with the passed in parameters
+    fun changePwrd(userId : String, newPwrd: String)//changes of the password of a selected user
+    fun deleteHuman(userId: String, grpCode: String)//deletes a human from the database
+    fun createMedCenter(hidId : String, grpCode : String)//creates the entry for a medCenter
+    fun deleteMedCenter(grpCode: String)//deletes a medCenter from the database
+    fun getHuman(userId : String, pass : String): Human?//selects a human from the database
+    fun authentication(userId : String, pass : String): Boolean//authenticates the users user and password
+    fun getAllHumans(): List<Human>//gets all humans
+    fun getMedCenter(grpCode : String): MedCenter?//selects a medCenter from the database
+    fun getMedHumans(grpCode: String): List<Human>//selects all humans belonging to a medCenter
+    fun getAllMedCenters(): List<MedCenter>//selects all medCenters
+    fun getSchedule(): List<Schedule> //returns the current schedule
+    fun getAccess(user : String) : Int //returns a users access level
+    fun getUserFiles(user : String) : List<File>//returns the list of files relating to a user
+    fun getClients(hid : String) : List<Human> //returns the clients of a doctor
 }
 
 class DAOFacadeDatabase(val db: Database): DAOFacade{

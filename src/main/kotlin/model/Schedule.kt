@@ -5,7 +5,7 @@ package main.kotlin.model
  * Language: Kotlin
  * Project: Halo
  * Description:
- *
+ * Data class for creating schedules to enter into the database
  *
  */
 
