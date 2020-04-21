@@ -9,5 +9,5 @@ package main.kotlin.model
  *
  */
 
-data class Schedule(val client: String,
-                    val doctor: String, val day: String)
+data class Schedule(var client: String,
+                    var doctor: String, var day: String)

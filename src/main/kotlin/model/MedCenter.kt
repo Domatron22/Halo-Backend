@@ -9,4 +9,4 @@ package main.kotlin.model
  *
  */
 
-data class MedCenter(val hid: String, val groupId: String)
+data class MedCenter(var hid: String, var groupId: String)

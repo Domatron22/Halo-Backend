@@ -8,5 +8,5 @@ package main.kotlin.model
  * Data class for creating Files to enter into the database
  *
  */
-data class File(val user: String, val fullName : String, val fileName: String,
-                val hid: String)
+data class File(val user: String, var fullName : String, var fileName: String,
+                var hid: String)

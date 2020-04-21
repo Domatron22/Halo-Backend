@@ -7,5 +7,5 @@ package main.kotlin.model
  * Description:
  *
  *
- */data class Doctor (val user: String, val pass: String,
-                      val name: String, val groupId: String)
+ */data class Doctor (val user: String, var pass: String,
+                      var name: String, var groupId: String)

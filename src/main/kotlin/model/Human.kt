@@ -9,6 +9,6 @@ package main.kotlin.model
  *
  */
 
-data class Human(val user: String, val pass: String,
-                 val fname: String, val lname: String,
-                 val groupId: String, val access: Int)
+data class Human(val user: String, var pass: String,
+                 var fname: String, var lname: String,
+                 var groupId: String, val access: Int)

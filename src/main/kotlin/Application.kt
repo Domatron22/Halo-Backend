@@ -89,7 +89,7 @@ fun main() {
                                 //whatever access level they have says what they are
                                 //1 - Client, 2 - Doctor, 3 - Developer, Failed to get it? Try again
                                 when(dao.getAccess(id)){
-                                    1 -> call.respond(FreeMarkerContent("index.ftl", mapOf("files" to dao.getUserFiles(id))))
+                                    1 -> call.respond(FreeMarkerContent("index.ftl", mapOf("files" to dao.getUserFiles(id) , "doctors" to dao.getDoctors(dao.getGroup(id)))))
                                     3 -> call.respond(FreeMarkerContent("dev.ftl", dao.getAllHumans()))
                                     else -> call.respond(FreeMarkerContent("SignIn.ftl", null))
                                 }

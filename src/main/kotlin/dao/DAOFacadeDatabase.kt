@@ -1,5 +1,6 @@
 package main.kotlin.dao
 
+import io.ktor.html.each
 import main.kotlin.model.*
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
@@ -22,6 +23,7 @@ interface DAOFacade: Closeable{
     fun createMedCenter(hidId : String, grpCode : String)//creates the entry for a medCenter
     fun deleteMedCenter(grpCode: String)//deletes a medCenter from the database
     fun getHuman(userId : String, pass : String): Human?//selects a human from the database
+    fun getGroup(user: String) : String
     fun authentication(userId : String, pass : String): Boolean//authenticates the users user and password
     fun getAllHumans(): List<Human>//gets all humans
     fun getMedCenter(grpCode : String): MedCenter?//selects a medCenter from the database
@@ -29,6 +31,7 @@ interface DAOFacade: Closeable{
     fun getAllMedCenters(): List<MedCenter>//selects all medCenters
     fun getAccess(user : String) : Int //returns a users access level
     fun getUserFiles(user : String) : List<File>//returns the list of files relating to a user
+    fun fileSearch(user: String, fileName : String) : List<File>
     fun getClients(groupId: String) : List<Human> //returns the clients of a doctor
     fun getSchedule(): List<Schedule> //returns the current schedule
     fun getClientSchedule(user: String): List<Schedule> //returns the clients current schedule
@@ -36,8 +39,7 @@ interface DAOFacade: Closeable{
     fun getDoctor(user: String, pass: String): Doctor? //selects a doctor
     fun docAuthentication(userId: String, pass: String) : Boolean //authenticates the doctor
     fun getDocGroup(user: String) : String //Checks their group
-    fun getGroup(user: String) : String
-    fun fileSearch(user: String, fileName : String) : List<File>
+    fun getDoctors(grpCode: String) : List<Doctor>
 }
 
 class DAOFacadeDatabase(val db: Database): DAOFacade{
@@ -51,7 +53,7 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
 
         val humans = listOf(Human("smith1", "1234", "John", "Smith", "GHP" ,1 ),
             Human("doe1", "1234", "Jane" , "Doe", "JAMC" , 3),
-            Human("Roll" , "1234" , "Rock" , "N' Roll" , "GHP" , 1),
+            Human("roll" , "1234" , "Rock" , "N' Roll" , "GHP" , 1),
             Human("doe2", "1234", "John" , "Doe", "GHP" , 3))
 
 
@@ -265,10 +267,10 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
     }
 
     override fun fileSearch(user: String, fileName: String): List<File>{
-        val fileList : ArrayList<File> = arrayListOf()
+        var fileList : ArrayList<File> = arrayListOf()
         transaction(db){
             Files.select { Files.user eq user }.map{
-                Files.select{Files.file eq fileName}.map {
+                Files.select{Files.file.substring(0, fileName.indexOf(".")) eq fileName}.map {
                     fileList.add(
                         File(
                             user = it[Files.user],
@@ -339,6 +341,25 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
                 )
             }.singleOrNull()
         }.singleOrNull()
+    }
+
+    override fun getDoctors(grpCode: String): List<Doctor>{
+        val doc : ArrayList<Doctor> = arrayListOf()
+        transaction(db) {
+            Doctors.select { Doctors.groupId eq grpCode }.map {
+                doc.add(
+                    Doctor(
+                        user = it[Doctors.user],
+                        groupId = it[Doctors.groupId],
+                        pass = it[Doctors.pass],
+                        name = it[Doctors.name]
+                    )
+                )
+
+            }
+        }
+
+        return doc
     }
 
     override fun docAuthentication(userId: String, pass: String): Boolean{

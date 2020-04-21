@@ -1,6 +1,6 @@
 <#import "template.ftl" as layout />
 <@layout.mainLayout title="New Human">
-<form action="/newHuman" method="post">
+<form action="/editHuman" method="post">
     <div class="form-group">
         <label for="fname">First Name</label>
         <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name" value="${(human.f_name)!}">
@@ -23,7 +23,7 @@
     </div>
     <div class="form-group">
         <label for="access">Access Level</label>
-        <input type="text" class="form-control" id="access" name="access" placeholder="Enter Access Level" value="${(human.access)!}">
+        <input type="number" class="form-control" id="access" name="access" placeholder="Enter Access Level" min="1" max="3" value="${(human.access)!}">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
