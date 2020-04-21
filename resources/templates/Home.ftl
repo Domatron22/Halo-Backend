@@ -23,7 +23,6 @@
       padding: 40px 15px;
       text-align: center;
     }
-
     </style>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -37,7 +36,10 @@
 <div class="jumbotron">
     <div class="container">
         <h1>Project Halo</h1>
-        <p>Welcome to Project Halo! Look around to learn more about us,  or go straight to sign-in  below</p>
+        <p>     Welcome to Project Halo! This project was dreamed up in 2018 and finished in April 2020 by Dominic Triano
+            for his Capstone at SUNY Polytechnic Institute. The purpose of this project is to create a standardized
+            system for medical centers to use to document patients and allow them access to their data in a fast and
+            easy way. Look around to learn more about us,  or go straight to sign-in below. </p>
         <p>
             <a href = "/signIn" class="btn btn-primary btn-lg">Sign In</a>
         </p>
@@ -48,26 +50,14 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" href="#">Halo</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#faq">FAQs</a></li>
+                <li><a href="#about">Tabs coming soon</a></li>
             </ul>
-<!--            <form class="form-inline my-2 my-lg-0">-->
-<!--                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">-->
-<!--                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-<!--            </form>-->
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </div>
 
@@ -82,16 +72,51 @@
         <div class="col-md-4">
             <h2>Easy</h2>
             <p>With Halo's interface, it is easy to understand and to find all of the data you need! If you need any help, just contact our support! </p>
-            <p><a class="btn btn-secondary" href="#" role="button">FAQs &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Accessible</h2>
             <p>Being a website, this is easily accessible from any platform at any time. There is no Additional software needed. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">FAQs &raquo;</a></p>
         </div>
     </div>
 </div>
+
+<p> </p>
+
+<h3>Client Features:</h3>
+<div class="container">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">File Download</li>
+        <li class="list-group-item">Schedule Viewing</li>
+    </ul>
+</div>
+
+<p> </p>
+
+<h3>Staff Features:</h3>
+<div class="container">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">File Download</li>
+        <li class="list-group-item">File Upload</li>
+        <li class="list-group-item">Schedule Viewing</li>
+        <li class="list-group-item">Patient Creation</li>
+    </ul>
+</div>
+
+<p> </p>
+
+<h3>Upcoming Features:</h3>
+<div class="container">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Appointment Creation</li>
+        <li class="list-group-item">Mobile Application</li>
+        <li class="list-group-item">Google Verification</li>
+        <li class="list-group-item">Contact Directory</li>
+    </ul>
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+

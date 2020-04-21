@@ -33,7 +33,7 @@ interface DAOFacade: Closeable{
     fun getSchedule(): List<Schedule> //returns the current schedule
     fun getAccess(user : String) : Int //returns a users access level
     fun getUserFiles(user : String) : List<File>//returns the list of files relating to a user
-    fun getClients(hid : String) : List<Human> //returns the clients of a doctor
+    fun getClients(user: String) : List<Human> //returns the clients of a doctor
 }
 
 class DAOFacadeDatabase(val db: Database): DAOFacade{

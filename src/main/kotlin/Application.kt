@@ -58,6 +58,9 @@ fun main() {
                     call.respond(FreeMarkerContent("Home.ftl", null))
                     //call.respondFile(File("resources", "name of file"))
                 }
+                post{
+
+                }
             }
 
             route("/signIn"){
@@ -104,8 +107,8 @@ fun main() {
 
             route("/client"){
                 get{
-                    val user = call.request.queryParameters["user"] ?: "empty"
-                    call.respond(FreeMarkerContent("index.ftl", mapOf("files" to dao.getUserFiles(user))))
+//                    val user = call.request.queryParameters["user"] ?: "empty"
+//                    call.respond(FreeMarkerContent("index.ftl", mapOf("files" to dao.getUserFiles(user))))
                 }
                 post{
 
@@ -124,6 +127,28 @@ fun main() {
                 get{
                     val user = call.request.queryParameters["user"] ?: "empty"
                     call.respond(FreeMarkerContent("dev.ftl" , mapOf("humans" to dao.getAllHumans())))
+                }
+
+                post{
+
+                }
+            }
+
+            route("/download"){
+                get {
+                    //call.respondFile(File("resources", "name of file"))
+                    val action = call.request.queryParameters["action"] ?: "empty"
+                    val user = call.request.queryParameters["user"] ?: "empty"
+                    val fileName = call.request.queryParameters["name"] ?: "empty"
+//                    println("testing" + action + " " + user + " " + fileName)
+                    when(action){
+                        "download" -> call.respondFile(File("resources/userFiles/" + user, fileName))
+                        else -> call.respond(FreeMarkerContent("index.ftl", mapOf("files" to dao.getUserFiles(user))))
+                    }
+                }
+
+                post{
+
                 }
             }
 
@@ -156,9 +181,7 @@ fun main() {
 //                }
 //            }
 
-            route("/download"){
-                //call.respondFile(File("resources", "name of file"))
-            }
+
         }
     }.start(wait=true)
 }
