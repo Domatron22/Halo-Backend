@@ -90,10 +90,11 @@ fun main() {
                                 //1 - Client, 2 - Doctor, 3 - Developer, Failed to get it? Try again
                                 when(dao.getAccess(id)){
                                     1 -> call.respond(FreeMarkerContent("index.ftl", mapOf("files" to dao.getUserFiles(id))))
-                                    2 -> call.respond(FreeMarkerContent("staff.ftl", dao.getClients(id)))
                                     3 -> call.respond(FreeMarkerContent("dev.ftl", dao.getAllHumans()))
                                     else -> call.respond(FreeMarkerContent("SignIn.ftl", null))
                                 }
+                            }else if (dao.docAuthentication(id, pass)){
+                                call.respond(FreeMarkerContent("staff.ftl", dao.getClients(dao.getDocGroup(id))))
                             }else{
                                 call.respond(FreeMarkerContent("SignIn.ftl", null))
                             }

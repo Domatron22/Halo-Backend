@@ -8,5 +8,4 @@ package main.kotlin.model
  *
  *
  */data class Doctor (val user: String, val pass: String,
-                      val name: String, val groupId: String,
-                      val scheduleId: String)
+                      val name: String, val groupId: String)

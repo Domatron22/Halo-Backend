@@ -16,6 +16,5 @@ object Humans : Table() {
     var f_name = varchar("fname", 25)//User's first name
     var l_name = varchar("lname", 25)//User's last name
     var groupId = varchar("groupId", 50) //The hospital id they belong to (possibly linking it to other tables)
-    var schedule = varchar("schedule", 1000) //no arrays are supported in kotlin yet, this will be comma deliniated (date, time, department, doctor)
     var access = integer("accesslvl") // How much power does this user have? (1 is client, 2 is Doc, 3 is Dev)
 }

@@ -11,5 +11,4 @@ package main.kotlin.model
 
 data class Human(val user: String, val pass: String,
                  val fname: String, val lname: String,
-                 val groupId: String, val schedule: String,
-                 val access: Int)
+                 val groupId: String, val access: Int)

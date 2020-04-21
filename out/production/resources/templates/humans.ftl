@@ -18,15 +18,13 @@
         <input type="password" class="form-control" id="pass" name="pass" placeholder="Enter Password" value="${(human.pass)!}">
     </div>
     <div class="form-group">
-        <label for="groupId">Hospital</label>
+        <label for="groupId">Medical Group</label>
         <input type="text" class="form-control" id="groupId" name="groupId" placeholder="Enter Hospital ID" value="${(human.groupId)!}">
     </div>
     <div class="form-group">
         <label for="access">Access Level</label>
         <input type="text" class="form-control" id="access" name="access" placeholder="Enter Access Level" value="${(human.access)!}">
     </div>
-    <input type="hidden" id="action" name="action" value="${action}">
-    <input type="hidden" id="user" name="user" value="${(human.user)!}">
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </@layout.mainLayout>
