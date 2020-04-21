@@ -206,11 +206,9 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
     override fun getSchedule() = transaction(db){
         Schedules.selectAll().map {
             Schedule(
-                it[Schedules.month],
-                it[Schedules.day],
-                it[Schedules.year],
-                it[Schedules.open],
-                it[Schedules.close]
+                it[Schedules.client],
+                it[Schedules.doctor],
+                it[Schedules.day]
             )
         }
     }

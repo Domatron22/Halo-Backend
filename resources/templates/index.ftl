@@ -102,7 +102,25 @@ body {font-family: "Lato", sans-serif;}
 <div id="Appointments" class="tabcontent">
     <h3>New Appointments</h3>
     <p>Please enter the details of the appointment you would like to make:</p>
-
+    <form action="/appointment" method="post">
+        <div class="form-group">
+            <label for="time">Appointment (Date and Time):</label>
+            <input type="datetime-local" class="form-control" id="time" name="time">
+        </div>
+        <div class="form-group">
+            <label for="doctor">Doctor:</label>
+            <select id="doctor">
+                <#list Doctors as doc>
+                <option value="${doc.user}">${doc.fullName}</option>
+            </#list>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="desc">Description:</label>
+            <input type="text" class="form-control" id="desc" name="desc" placeholder="What is the purpose of this visit?">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </div>
 
 <div id="Home" class="tabcontent text-center">

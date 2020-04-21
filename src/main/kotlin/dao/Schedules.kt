@@ -12,9 +12,7 @@ import org.jetbrains.exposed.sql.Table
 
 //TODO -- Might make this into a schedule for humans to see what their schedule is, or integrate google clendar.
 object Schedules : Table() {
-    var month = varchar("month", 10)
-    var day = integer("day")
-    var year = integer("year")
-    var open = integer("openHr")
-    var close = integer("closeHr")
+    var client = varchar("clientId", 25)
+    var doctor = varchar("docId" ,25)
+    var day = varchar("day" , 20)
 }
