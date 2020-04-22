@@ -57,7 +57,6 @@ body {font-family: "Lato", sans-serif;}
   border: 1px solid #ccc;
   width: 70%;
   border-left: none;
-  height: 300px;
 }
 </style>
 
@@ -65,7 +64,7 @@ body {font-family: "Lato", sans-serif;}
 <#assign x = 0>
 <#list staff as dev>
 <#if x < 1>
-<h1>Welcome ${dev.name}</h1>
+<h1>Welcome ${dev.fname} ${dev.lname}</h1>
 </#if>
 <#assign x = 1>
 </#list>
@@ -80,18 +79,18 @@ body {font-family: "Lato", sans-serif;}
     <table class="table">
         <thead class="thead-dark">
         <tr>
-            <th scope="col">Patients</th>
+            <th scope="col">Users</th>
             <th>
                 <input class="form-control" type="text" placeholder="Search" aria-label="Search">
             </th>
         </tr>
         </thead>
         <tbody>
-        <#list human as human>
+        <#list humans as human>
         <tr>
             <td>${human.fname} ${human.lname}</td>
             <td>
-                <a href="/fileViewer?name=${human.user}" class="btn btn-secondary float-right mr-2" role="button">See Files</a>
+                <a href="/editHuman?name=${human.user}" class="btn btn-secondary float-right mr-2" role="button">Edit User</a>
             </td>
         </tr>
         </#list>
@@ -103,7 +102,13 @@ body {font-family: "Lato", sans-serif;}
     <h3>New User</h3>
     <p>Please enter the details of the new user:</p>
     <form action="/newHuman" method="post" class="form-signin">
-        <h1 class="h3 mb-3 font-weight-normal">New Human: </h1>
+        <div class="form-group">
+            <label for="type">Select The User Type:</label>
+            <select id="type">
+                <option value="doc">Doctor</option>
+                <option value="human">Client</option>
+            </select>
+        </div>
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
@@ -146,6 +151,7 @@ body {font-family: "Lato", sans-serif;}
             <input type="text" class="form-control" id="access" min="1" max="3">
         </div>
         <hr class="mb-4">
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 

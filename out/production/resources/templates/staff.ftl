@@ -120,8 +120,21 @@ body {font-family: "Lato", sans-serif;}
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    <p><br><br><br></p>
-    <h3>Current Appointments</h3>
+    <p><br><br></p>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Current Appointments</th>
+        </tr>
+        </thead>
+        <tbody>
+        <#list schedules as schedule>
+        <tr>
+            <td>${schedule.client} ${schedule.day}</td>
+        </tr>
+        </#list>
+        </tbody>
+    </table>
 </div>
 
 <div id="Home" class="tabcontent text-center">

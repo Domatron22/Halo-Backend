@@ -25,6 +25,7 @@ interface DAOFacade: Closeable{
     fun createMedCenter(hidId : String, grpCode : String)//creates the entry for a medCenter
     fun deleteMedCenter(grpCode: String)//deletes a medCenter from the database
     fun getHuman(userId : String, pass : String): List<Human>//selects a human from the database
+    fun getName(userId: String) : String
     fun getGroup(user: String) : String
     fun authentication(userId : String, pass : String): Boolean//authenticates the users user and password
     fun getAllHumans(): List<Human>//gets all humans
@@ -43,6 +44,8 @@ interface DAOFacade: Closeable{
     fun docAuthentication(userId: String, pass: String) : Boolean //authenticates the doctor
     fun getDocGroup(user: String) : String //Checks their group
     fun getDoctors(grpCode: String) : List<Doctor>
+    fun getDocName(user: String) : String
+    fun createDoctor(user: String, pass: String, name: String, groupId: String)
 }
 
 class DAOFacadeDatabase(val db: Database): DAOFacade{
@@ -120,6 +123,19 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
         Unit
     }
 
+    override fun createDoctor(user: String, pass: String, name: String, groupId: String)= transaction(db){
+        Doctors.insert{
+            it[Doctors.user] = user,
+            it[Doctors.groupId] = groupId,
+            it[Doctors.name] = name,
+            it[Doctors.pass] = pass
+        }
+
+        Unit
+    }
+
+
+
     override fun changePwrd(userId: String, newPwrd: String) = transaction(db) {
         Humans.update({Humans.user eq userId}){
             it[Humans.pass] = newPwrd;
@@ -180,10 +196,10 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
         Humans.selectAll().map{
             Human(
                 it[Humans.user],
-                it[Humans.groupId],
                 it[Humans.pass],
                 it[Humans.f_name],
                 it[Humans.l_name],
+                it[Humans.groupId],
                 it[Humans.access]
             )
         }
@@ -256,6 +272,28 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
 
     }
 
+    override fun getName(userId: String): String{
+        val human : ArrayList<Human> = arrayListOf()
+        transaction(db) {
+            Humans.select { Humans.user eq userId }.map {
+                human.add(
+                    Human(
+                        user = it[Humans.user],
+                        groupId = it[Humans.groupId],
+                        pass = it[Humans.pass],
+                        fname = it[Humans.f_name],
+                        lname = it[Humans.l_name],
+                        access = it[Humans.access]
+                    )
+                )
+            }
+        }
+
+        return (human[0].fname + " " + human[0].lname)
+    }
+
+
+
     override fun getUserFiles(user: String): List<File>{
         val fileList : ArrayList<File> = arrayListOf()
         transaction(db){
@@ -326,7 +364,7 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
     }
 
     override fun getClientSchedule(user: String): List<Schedule>{
-        val schedule : ArrayList<Schedule> = arrayListOf()
+        var schedule : ArrayList<Schedule> = arrayListOf()
         transaction(db){
             Schedules.select { Schedules.client eq user }.map{
                 schedule.add(
@@ -338,11 +376,16 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
                 )
             }
         }
+
+        for (schedule in schedule) {
+            schedule.doctor = getDocName(schedule.doctor)
+        }
+
         return schedule
     }
 
     override fun getDocSchedule(doc: String): List<Schedule>{
-        val schedule : ArrayList<Schedule> = arrayListOf()
+        var schedule : ArrayList<Schedule> = arrayListOf()
         transaction(db){
             Schedules.select { Schedules.doctor eq doc }.map{
                 schedule.add(
@@ -353,6 +396,10 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
                     )
                 )
             }
+        }
+
+        for (schedule in schedule) {
+            schedule.client = getName(schedule.client)
         }
 
         return schedule
@@ -376,6 +423,8 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
 
         return doc
     }
+
+
 
 
     override fun getDoctors(grpCode: String): List<Doctor>{
@@ -473,6 +522,25 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
         }
 
         return human[0].groupId
+    }
+
+    override fun getDocName(user: String): String{
+        val doc : ArrayList<Doctor> = arrayListOf()
+        transaction(db) {
+            Doctors.select { Doctors.user eq user }.map {
+                doc.add(
+                    Doctor(
+                        user = it[Doctors.user],
+                        groupId = it[Doctors.groupId],
+                        pass = it[Doctors.pass],
+                        name = it[Doctors.name]
+                    )
+                )
+
+            }
+        }
+
+        return doc[0].name
     }
 
     override fun close(){ }
