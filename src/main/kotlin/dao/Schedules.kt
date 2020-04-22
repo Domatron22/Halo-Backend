@@ -14,5 +14,5 @@ import org.jetbrains.exposed.sql.Table
 object Schedules : Table() {
     var client = varchar("clientId", 25)
     var doctor = varchar("docId" ,25)
-    var day = varchar("day" , 20)
+    var day = datetime("day")
 }

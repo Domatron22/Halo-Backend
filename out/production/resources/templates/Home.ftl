@@ -96,7 +96,6 @@
 <div class="container">
     <ul class="list-group list-group-flush">
         <li class="list-group-item">File Download</li>
-        <li class="list-group-item">File Upload</li>
         <li class="list-group-item">Schedule Viewing</li>
         <li class="list-group-item">Patient Creation</li>
     </ul>
@@ -108,6 +107,7 @@
 <div class="container">
     <ul class="list-group list-group-flush">
         <li class="list-group-item">Appointment Creation</li>
+        <li class="list-group-item">File Upload</li>
         <li class="list-group-item">Mobile Application</li>
         <li class="list-group-item">Google Verification</li>
         <li class="list-group-item">Contact Directory</li>

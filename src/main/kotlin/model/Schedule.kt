@@ -1,5 +1,8 @@
 package main.kotlin.model
 
+import org.joda.time.DateTime
+import java.util.*
+
 /* Author: Dominic Triano
  * Date: 4/6/2020
  * Language: Kotlin
@@ -10,4 +13,4 @@ package main.kotlin.model
  */
 
 data class Schedule(var client: String,
-                    var doctor: String, var day: String)
+                    var doctor: String, var day: DateTime)

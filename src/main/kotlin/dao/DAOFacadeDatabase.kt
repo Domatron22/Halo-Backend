@@ -4,7 +4,9 @@ import io.ktor.html.each
 import main.kotlin.model.*
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
+import org.joda.time.DateTime
 import java.io.Closeable
+import java.util.Date
 
 /* Author: Dominic Triano
  * Date: 4/3/2020
@@ -22,7 +24,7 @@ interface DAOFacade: Closeable{
     fun deleteHuman(userId: String, grpCode: String)//deletes a human from the database
     fun createMedCenter(hidId : String, grpCode : String)//creates the entry for a medCenter
     fun deleteMedCenter(grpCode: String)//deletes a medCenter from the database
-    fun getHuman(userId : String, pass : String): Human?//selects a human from the database
+    fun getHuman(userId : String, pass : String): List<Human>//selects a human from the database
     fun getGroup(user: String) : String
     fun authentication(userId : String, pass : String): Boolean//authenticates the users user and password
     fun getAllHumans(): List<Human>//gets all humans
@@ -31,12 +33,13 @@ interface DAOFacade: Closeable{
     fun getAllMedCenters(): List<MedCenter>//selects all medCenters
     fun getAccess(user : String) : Int //returns a users access level
     fun getUserFiles(user : String) : List<File>//returns the list of files relating to a user
+    fun getMedFiles(grpCode: String) : List<File>
     fun fileSearch(user: String, fileName : String) : List<File>
     fun getClients(groupId: String) : List<Human> //returns the clients of a doctor
     fun getSchedule(): List<Schedule> //returns the current schedule
     fun getClientSchedule(user: String): List<Schedule> //returns the clients current schedule
     fun getDocSchedule(doc: String): List<Schedule> //returns the doctors current schedule
-    fun getDoctor(user: String, pass: String): Doctor? //selects a doctor
+    fun getDoctor(user: String, pass: String): List<Doctor> //selects a doctor
     fun docAuthentication(userId: String, pass: String) : Boolean //authenticates the doctor
     fun getDocGroup(user: String) : String //Checks their group
     fun getDoctors(grpCode: String) : List<Doctor>
@@ -84,8 +87,8 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
             this[Files.hid] = file.hid
         }
 
-        val docs = listOf(Doctor("Calla" , "1234" , "GHP" , "T.C. Callahan"),
-            Doctor("Alexa" , "1234" , "GHP" , "Jordan Alexander"))
+        val docs = listOf(Doctor("Calla" , "1234" , "T.C. Callahan" , "GHP"),
+            Doctor("Alexa" , "1234" , "Jordan Alexander" , "GHP"))
 
         Doctors.batchInsert(docs){ doctor ->
             this[Doctors.user] = doctor.user
@@ -94,9 +97,9 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
             this[Doctors.name] = doctor.name
         }
 
-        val schedules = listOf(Schedule("smith1" , "Calla" , "05/02/2020 13:00"))
+        val schedules = listOf(Schedule("smith1" , "Calla" , DateTime(2020, 5, 3, 14, 0)))
 
-        Doctors.batchInsert(schedules){ schedule ->
+        Schedules.batchInsert(schedules){ schedule ->
             this[Schedules.client] = schedule.client
             this[Schedules.doctor] = schedule.doctor
             this[Schedules.day] = schedule.day
@@ -129,19 +132,25 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
         Unit
     }
 
-    override fun getHuman(userId: String, pass : String): Human? = transaction(db){
-        Humans.select{Humans.user eq userId}.map{
-            Humans.select { Humans.pass eq pass }.map{
-            Human(
-                it[Humans.user],
-                it[Humans.groupId],
-                it[Humans.pass],
-                it[Humans.f_name],
-                it[Humans.l_name],
-                it[Humans.access]
-            )
-            }.singleOrNull()
-        }.singleOrNull()
+    override fun getHuman(userId: String, pass : String): List<Human>{
+        val humanList : ArrayList<Human> = arrayListOf()
+        transaction(db) {
+            Humans.select { Humans.user eq userId }.map {
+                humanList.add(
+                    Human(
+                        user = it[Humans.user],
+                        groupId = it[Humans.groupId],
+                        pass = it[Humans.pass],
+                        fname = it[Humans.f_name],
+                        lname = it[Humans.l_name],
+                        access = it[Humans.access]
+                    )
+                )
+
+            }
+        }
+
+        return humanList
     }
 
     override fun authentication(userId: String, pass: String) : Boolean{
@@ -266,6 +275,25 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
         return fileList
     }
 
+    override fun getMedFiles(grpCode: String): List<File>{
+        val fileList : ArrayList<File> = arrayListOf()
+        transaction(db){
+            Files.select { Files.hid eq grpCode }.map{
+                fileList.add(
+                    File(
+                        user = it[Files.user],
+                        fullName = it[Files.fullName],
+                        fileName = it[Files.file],
+                        hid = it[Files.hid]
+                    )
+                )
+            }
+
+        }
+
+        return fileList
+    }
+
     override fun fileSearch(user: String, fileName: String): List<File>{
         var fileList : ArrayList<File> = arrayListOf()
         transaction(db){
@@ -330,18 +358,25 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
         return schedule
     }
 
-    override fun getDoctor(user: String, pass: String): Doctor? = transaction(db){
-        Doctors.select{Doctors.user eq user}.map{
-            Doctors.select { Doctors.pass eq pass }.map{
-                Doctor(
-                    it[Doctors.user],
-                    it[Doctors.groupId],
-                    it[Doctors.pass],
-                    it[Doctors.name]
+    override fun getDoctor(user: String, pass: String): List<Doctor> {
+        val doc : ArrayList<Doctor> = arrayListOf()
+        transaction(db) {
+            Doctors.select { Doctors.user eq user }.map {
+                doc.add(
+                    Doctor(
+                        user = it[Doctors.user],
+                        groupId = it[Doctors.groupId],
+                        pass = it[Doctors.pass],
+                        name = it[Doctors.name]
+                    )
                 )
-            }.singleOrNull()
-        }.singleOrNull()
+
+            }
+        }
+
+        return doc
     }
+
 
     override fun getDoctors(grpCode: String): List<Doctor>{
         val doc : ArrayList<Doctor> = arrayListOf()

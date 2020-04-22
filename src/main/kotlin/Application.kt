@@ -88,13 +88,14 @@ fun main() {
                                 //print("testingg3")
                                 //whatever access level they have says what they are
                                 //1 - Client, 2 - Doctor, 3 - Developer, Failed to get it? Try again
+                                print(dao.getHuman(id, pass)[0].user)
                                 when(dao.getAccess(id)){
-                                    1 -> call.respond(FreeMarkerContent("index.ftl", mapOf("files" to dao.getUserFiles(id) , "doctors" to dao.getDoctors(dao.getGroup(id)))))
-                                    3 -> call.respond(FreeMarkerContent("dev.ftl", dao.getAllHumans()))
+                                    1 -> call.respond(FreeMarkerContent("index.ftl", mapOf("files" to dao.getUserFiles(id) , "doctors" to dao.getDoctors(dao.getGroup(id)), "user" to dao.getHuman(id, pass))))
+                                    3 -> call.respond(FreeMarkerContent("dev.ftl", mapOf("humans" to dao.getAllHumans())))
                                     else -> call.respond(FreeMarkerContent("SignIn.ftl", null))
                                 }
                             }else if (dao.docAuthentication(id, pass)){
-                                call.respond(FreeMarkerContent("staff.ftl", dao.getClients(dao.getDocGroup(id))))
+                                call.respond(FreeMarkerContent("staff.ftl", mapOf("human" to dao.getClients(dao.getDocGroup(id)), "doctor" to dao.getDoctor(id, pass), "files" to dao.getMedFiles(dao.getDocGroup(id)))))
                             }else{
                                 call.respond(FreeMarkerContent("SignIn.ftl", null))
                             }

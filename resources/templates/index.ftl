@@ -57,15 +57,14 @@ body {font-family: "Lato", sans-serif;}
   border: 1px solid #ccc;
   width: 70%;
   border-left: none;
-  height: 300px;
 }
 </style>
 
 <@layout.mainLayout>
 <#assign x = 0>
-<#list files as file>
+<#list user as use>
 <#if x < 1>
-<h1>Welcome ${file.fullName}</h1>
+<h1>Welcome ${use.fname} ${use.lname}</h1>
 </#if>
 <#assign x = 1>
 </#list>
@@ -110,9 +109,9 @@ body {font-family: "Lato", sans-serif;}
         <div class="form-group">
             <label for="doctor">Doctor:</label>
             <select id="doctor">
-                <#list Doctors as doc>
-                <option value="${doc.user}">${doc.fullName}</option>
-            </#list>
+                <#list doctors as doc>
+                    <option value="${doc.user}">${doc.name}</option>
+                </#list>
             </select>
         </div>
         <div class="form-group">
