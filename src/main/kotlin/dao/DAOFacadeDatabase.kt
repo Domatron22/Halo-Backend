@@ -59,7 +59,7 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
 
         val humans = listOf(Human("smith1", "1234", "John", "Smith", "GHP" ,1 ),
             Human("doe1", "1234", "Jane" , "Doe", "JAMC" , 3),
-            Human("roll" , "1234" , "Rock" , "N' Roll" , "GHP" , 1),
+            Human("roll" , "1234" , "Rock" , "N' Roll" , "JAMC" , 1),
             Human("doe2", "1234", "John" , "Doe", "GHP" , 3))
 
 
@@ -81,7 +81,7 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
         }
 
         val files = listOf(File("smith1" , "John Smith" , "HeartScan.jpg" , "GHP"),
-            File("smith1" , "John Smith" , "ShoulderSurgeryDescription.pdf" , "GHP"))
+            File("smith1" , "John Smith" , "ShoulderSurgeryPictures.pdf" , "GHP"))
 
         Files.batchInsert(files){ file ->
             this[Files.user] = file.user
@@ -91,7 +91,8 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
         }
 
         val docs = listOf(Doctor("Calla" , "1234" , "T.C. Callahan" , "GHP"),
-            Doctor("Alexa" , "1234" , "Jordan Alexander" , "GHP"))
+            Doctor("Alexa" , "1234" , "Jordan Alexander" , "GHP"),
+            Doctor("Stran" , "1234" , "Stephen Strange" , "JAMC"))
 
         Doctors.batchInsert(docs){ doctor ->
             this[Doctors.user] = doctor.user
@@ -125,10 +126,10 @@ class DAOFacadeDatabase(val db: Database): DAOFacade{
 
     override fun createDoctor(user: String, pass: String, name: String, groupId: String)= transaction(db){
         Doctors.insert{
-            it[Doctors.user] = user,
-            it[Doctors.groupId] = groupId,
-            it[Doctors.name] = name,
-            it[Doctors.pass] = pass
+            it[Doctors.user] = user;
+            it[Doctors.groupId] = groupId;
+            it[Doctors.name] = name;
+            it[Doctors.pass] = pass;
         }
 
         Unit

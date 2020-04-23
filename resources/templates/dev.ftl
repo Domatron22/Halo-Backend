@@ -136,6 +136,16 @@ body {font-family: "Lato", sans-serif;}
             </div>
         </div>
 
+        <div class="mb-3">
+            <label for="password">Password</label>
+            <div class="input-group">
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                    Your username is required.
+                </div>
+            </div>
+        </div>
+
         <!--                <div class="mb-3">-->
         <!--                    <label for="email">Email <span class="text-muted">(Optional)</span></label>-->
         <!--                    <input type="email" class="form-control" id="email" placeholder="you@example.com">-->
@@ -148,7 +158,7 @@ body {font-family: "Lato", sans-serif;}
 
         <div class="mb-3">
             <label for="access">Access Level</label>
-            <input type="text" class="form-control" id="access" min="1" max="3">
+            <input type="text" class="form-control" id="access" min="1" max="3" required>
         </div>
         <hr class="mb-4">
         <button type="submit" class="btn btn-primary">Submit</button>

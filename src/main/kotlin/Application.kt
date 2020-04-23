@@ -139,9 +139,9 @@ fun main() {
             route("/download"){
                 get {
                     //call.respondFile(File("resources", "name of file"))
-                    val action = call.request.queryParameters["action"] ?: "empty"
-                    val user = call.request.queryParameters["user"] ?: "empty"
-                    val fileName = call.request.queryParameters["name"] ?: "empty"
+                    val action = call.request.queryParameters["action"]!!
+                    val user = call.request.queryParameters["user"]!!
+                    val fileName = call.request.queryParameters["name"]!!
 //                    println("testing" + action + " " + user + " " + fileName)
                     when(action){
                         "download" -> call.respondFile(File("resources/userFiles/" + user, fileName))
@@ -158,6 +158,25 @@ fun main() {
                 get{
                     val id = call.request.queryParameters["name"] ?: "empty"
                     call.respond(FreeMarkerContent("humans.ftl", mapOf("files" to dao.getUserFiles(id))))
+                }
+                post{
+
+                }
+            }
+
+            route("/newHuman"){
+                get{
+                    val user = call.request.queryParameters["username"]!!
+                    val type = call.request.queryParameters["type"]!!
+                    val pass = call.request.queryParameters["password"]!!
+                    val fname = call.request.queryParameters["firstName"]!!
+                    val lname = call.request.queryParameters["lastName"]!!
+                    val grpCode = call.request.queryParameters["grpCode"]!!
+                    val access = call.request.queryParameters["access"] ?: 0
+                    when(type){
+                        "doc" -> dao.createDoctor(user, pass, (fname + " " +lname), grpCode)
+                        "human" -> dao.createHuman(user, pass, fname, lname, grpCode, access)
+                    }
                 }
                 post{
 
